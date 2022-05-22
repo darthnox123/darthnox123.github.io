@@ -1,0 +1,33 @@
+*{padding: 0; margin: 0; box-sizing: border-box;}
+
+header {
+  text-align: center;
+	width: 100%;
+	height: auto;
+	background-size: cover;
+	background-attachment: fixed;
+	position: relative;
+	overflow: hidden;
+	border-radius: 0 0 85% 85% / 30%;
+}
+
+header .overlay{
+	width: 100%;
+	height: 100%;
+	padding: 50px;
+	color: #FFF;
+	text-shadow: 1px 1px 1px #333;
+  background-color: #f5df2e;
+  background-image: linear-gradient(315deg, #f5df2e 0%, #f07654 74%);
+}
+
+.name {
+	font-family: 'Dancing Script', cursive;
+	font-size: 80px;
+	margin-bottom: 30px;
+}
+
+.description {
+	font-family: 'Open Sans', sans-serif;
+	margin-bottom: 30px;
+}
