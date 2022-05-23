@@ -1,6 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
-@import 'bootstrap/dist/css/bootstrap-grid.min.css';
-
 *{margin:0; padding:0}
 
-.container {margin:0; padding:0}
+.container {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.container, .container-md, .container-sm {
+  max-width: 100%;
+}
+
+@font-face {
+  font-family: "google";
+  src: local("google"), url(./assets/font/Google_September.ttf) format("truetype");
+}

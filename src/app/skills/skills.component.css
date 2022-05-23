@@ -1,0 +1,7 @@
+.skills {
+    padding: 50px;
+    color: #FFF;
+    text-shadow: 1px 1px 1px #333;
+    background-color: #f5df2e;
+    z-index: -1 !important;
+}
