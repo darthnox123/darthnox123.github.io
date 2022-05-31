@@ -1,15 +1,39 @@
-*{margin:0; padding:0}
-
-.container {
-  padding-left: 0px;
-  padding-right: 0px;
-}
-
-.container, .container-md, .container-sm {
-  max-width: 100%;
-}
-
+/* Fonts */
 @font-face {
   font-family: "google";
   src: local("google"), url(./assets/font/Google_September.ttf) format("truetype");
 }
+/*  */
+/* COLORS */
+:root {
+  --pri-color:#2A2A63;
+  --sec-color:#D9D9D9;
+  --third-color:#BC8E30;
+}
+
+
+/*  */
+body,html{
+  background-color: var(--sec-color);
+  color: var(--pri-color);
+  font-family: 'google';
+  overflow-x: hidden
+}
+
+/* BORDERS*/
+.g-border-right{
+  border-right: 1rem solid var(--pri-color) !important;
+}
+
+.g-border-bottom {
+  border-bottom: 1rem  solid var(--pri-color) !important;
+}
+
+.g-border-left{
+  border-left: 1rem  solid var(--pri-color) !important;
+}
+
+.g-border-top{
+ border-top: 1rem  solid var(--pri-color) !important;
+}
+/*  */

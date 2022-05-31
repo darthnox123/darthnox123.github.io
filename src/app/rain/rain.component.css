@@ -1,0 +1,39 @@
+.container {
+  filter: invert(16%) sepia(75%) saturate(982%) hue-rotate(212deg) brightness(87%) contrast(95%);
+  transform: rotate(25deg);
+  opacity: 0.2;
+  position: absolute;
+  left: 25rem;
+  float: right;
+  top: -15rem;
+}
+
+.snow {
+	position: relative;
+	display: flex;
+	padding: 0 20px;
+	z-index:0;
+ 	float: right;
+  font-size: 7rem;
+}
+
+.snow span {
+	position: relative;
+	bottom: 10px;
+	margin: 0 2px;
+	animation: animate 5s linear infinite;
+	animation-duration: calc(15s / var(--i));
+	transform-origin: bottom;
+}
+
+@keyframes animate {
+	0% {
+		transform: translateY(0) scale(1);
+	}
+	70% {
+		transform: translateY(300px) scale(1);
+	}
+	100% {
+		transform: translateY(300px) scale(0);
+	}
+}

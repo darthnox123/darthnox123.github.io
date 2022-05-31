@@ -1,0 +1,31 @@
+.toggle{
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+}
+
+.custom-switch{
+  transform: scale(3.5)
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+  .custom-switch{
+    transform: scale(2.5)
+  }
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  .custom-switch{
+    transform: scale(2)
+  }
+}
+
+.custom-control-input:not(:checked) ~ .custom-control-label::after {
+  background-image: url("../../assets/images/sunglasses.svg");
+}
+
+.custom-control-input:checked ~ .custom-control-label::after {
+  background-image: url("../../assets/images/night.svg");
+}

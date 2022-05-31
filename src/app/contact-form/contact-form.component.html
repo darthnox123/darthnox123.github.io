@@ -1,0 +1,25 @@
+<div [formGroup]="contactForm" class="form-group">
+
+  <!-- TODO TRanslations -->
+  <div class="body">
+    <div class="row mt-4 mb-4">
+      <div class="col-md-6">
+        <input type="text" class="form-control" formControlName="email" placeholder="Email">
+      </div>
+      <div class="col-md-6">
+        <input type="text" class="form-control" formControlName="_subject" placeholder="Subject" >
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <textarea class="form-control" formControlName="message" placeholder="Message"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer mt-3 mb-4">
+    <button type="button" class="btn btn-primary" (click)="onSubmit()" type="submit">Send <i class="fa fa-paper-plane-o"></i></button>
+  </div>
+
+</div>

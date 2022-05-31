@@ -1,7 +1,32 @@
-.skills {
-    padding: 50px;
-    color: #FFF;
-    text-shadow: 1px 1px 1px #333;
-    background-color: #f5df2e;
-    z-index: -1 !important;
+.icons{
+  font-size: 4rem;
+}
+
+
+/* Large desktop */
+@media (min-width: 1200px) {
+  .icons{
+    font-size: 4rem;
+  }
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+  .icons{
+    font-size: 3rem;
+  }
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+  .icons{
+    font-size: 2rem;
+  }
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  .icons{
+    font-size: 1rem;
+  }
 }
