@@ -1,5 +1,14 @@
-<div class="row mt-4">
-  <div class="col">
-    [<i>I FILL MY MIND UP WITH IDEAS : </i>]
+[<i>I FILL MY MIND UP WITH IDEAS : </i>]
+<div class="row mt-4 mb-4" >
+  <div class="col-md-3 mt-4" *ngFor="let proj of projects">
+    <div class="box">
+      <div class="card-body">
+        <h4 class="card-title">{{proj.name}}</h4>
+        <span *ngFor="let langs of proj.languages_array" style="display:inline-block; margin-right: 5px;"><i class="devicon-{{formatIcon(langs)}}"></i></span>
+        <hr style="border-top: dotted 3px;" />
+        <p class="card-text">{{proj.description}}</p>
+      </div>
+      <a [href]="proj.svn_url" class="btn btn-primary float-right">Get a Look</a>
+    </div>
   </div>
 </div>

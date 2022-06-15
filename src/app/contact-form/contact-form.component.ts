@@ -12,14 +12,14 @@ export class ContactFormComponent implements OnInit {
 
   constructor(private contactService: ContactService) { }
 
-  ngOnInit() {
+  async ngOnInit() {
     this.initForm();
   }
 
   private initForm() {
     this.contactForm = new FormGroup({
       'email': new FormControl(null, [Validators.required]),
-      '_subject': new FormControl(null,[Validators.required]),
+      'subject': new FormControl(null,[Validators.required]),
       'message': new FormControl(null, [Validators.required]),
     });
   }
@@ -27,16 +27,7 @@ export class ContactFormComponent implements OnInit {
   async onSubmit(): Promise<any> {
     const data = this.contactForm.value
     // ADD VALIDITY
-    console.log(data)
     await this.contactService.sendMessage(data)
-    .subscribe((response: any) => {
-      console.log(response)
-      // TODO CLEAR FORM IF RESPONSE
-    }),
-    (error: any) => {
-      // TODO SHOW ERRORS???
-      console.warn(error)
-    }
   }
 
 }

@@ -1,0 +1,21 @@
+.box {
+  border: 1rem solid var(--pri-color);
+}
+
+
+.card-body{
+  height: 27rem;
+}
+
+.card-body:before {
+  position:absolute; left:1rem; top:0px; content:'';
+  border-top: 80px solid var(--pri-color);
+  border-right: 80px solid transparent;
+}
+
+.btn-primary{
+  position: relative;
+  bottom: 2.5rem;
+  right: 20px;
+  background-color: var(--pri-color);
+}

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CertificationsService } from '@app/services';
 
 @Component({
   selector: 'app-certifications',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CertificationsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private certificationsService: CertificationsService) { }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
+    const data = await this.certificationsService.getFiles();
+    console.log(data)
   }
 
 }

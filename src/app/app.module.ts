@@ -5,7 +5,7 @@ import { SkillsComponent } from './skills/skills.component';
 import { RainComponent } from './rain/rain.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ContactService } from '@services';
+import { CertificationsService, ContactService, EmojiService, ProjectsService } from '@services';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ToggleModeComponent } from './toggle-mode/toggle-mode.component';
@@ -16,7 +16,7 @@ import { IdeiasComponent } from './ideias/ideias.component';
 @NgModule({
   declarations: [AppComponent, HeaderComponent, SkillsComponent, RainComponent, ContactFormComponent, ToggleModeComponent, CertificationsComponent, TimelineComponent, IdeiasComponent],
   imports: [BrowserModule, ReactiveFormsModule, HttpClientModule, FormsModule ],
-  providers: [ContactService],
+  providers: [ContactService, ProjectsService, EmojiService, CertificationsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -19,5 +19,7 @@ export class SkillsComponent {
     'mysql-plain',
     'bootstrap-plain',
     'vuejs-plain',
+    'nestjs-plain',
+    'html5-plain',
   ];
 }

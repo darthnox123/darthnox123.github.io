@@ -2,6 +2,7 @@
 .name {
 	font-size: 7em;
 	margin-bottom: 30px;
+  margin-top: 5rem;
 }
 
 /* Landscape phone to portrait tablet */
@@ -24,7 +25,6 @@
 
 .header{
   text-align: center;
-  padding-top:2rem;
 }
 
 .wave {
@@ -51,4 +51,8 @@
   overflow: hidden;
   position: relative;
   pointer-events: none;
+}
+
+.vh-98{
+  height: 98.5vh !important;
 }
