@@ -1,9 +1,10 @@
 <div class="skills">
   <!-- TODO translations -->
-  <p> MY CERTIFICATIONS: </p>
+  <!-- TODO File names Better -->
+  [<i> CERTIFICATIONS : </i>]
   <div class="row" >
-    <!-- <div class="col-3" *ngFor="let name of skillsName">
-     <span class="icons"><i class="devicon-{{name}}"></i></span>
-    </div> -->
+    <ul>
+      <li *ngFor="let file of certificates">{{file.name}} <a [href]="file.download_url" download><i class="fa fa-download"></i></a> </li>
+    </ul>
   </div>
 </div>

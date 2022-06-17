@@ -8,11 +8,13 @@ import { CertificationsService } from '@app/services';
 })
 export class CertificationsComponent implements OnInit {
 
+  public certificates: any[];
+
   constructor(private certificationsService: CertificationsService) { }
 
   async ngOnInit(): Promise<void> {
     const data = await this.certificationsService.getFiles();
-    console.log(data)
+    this.certificates = data.map((file: any) => {return {downloadUrl: file.download_url, name: (file.name).replace('.pdf','')}});
   }
 
 }

@@ -34,7 +34,6 @@ export class IdeiasComponent implements OnInit {
 
   formatIcon(langs: string){
     if(langs == 'HTML') langs='html5'
-
     return langs.toLowerCase()+'-plain'
   }
 }
