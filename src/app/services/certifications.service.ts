@@ -2,23 +2,49 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { Octokit } from "octokit";
+import * as CryptoJS from 'crypto-js';
 
 @Injectable()
 export class CertificationsService {
   constructor(protected httpClient: HttpClient) {  }
 
+  public encryptSecretKey = ""
   async getFiles(): Promise<any> {
     const octokit = new Octokit({
-      auth: environment.github_token
+      auth: this.decryptData(environment.github_token)
+
     })
 
     const data = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
       owner: 'darthnox123',
-      repo: 'darthnox123.github.io',
+      repo: 'darthnox123.github.ios',
       path: 'pdf_files',
       ref:'master'
     })
 
     return data.data;
+  }
+
+  encryptData(data :any) {
+
+    try {
+      return CryptoJS.AES.encrypt(JSON.stringify(data), this.encryptSecretKey).toString();
+    } catch (e) {
+      console.log(e);
+      return e;
+    }
+  }
+
+  decryptData(data: any) {
+
+    try {
+      const bytes = CryptoJS.AES.decrypt(data, this.encryptSecretKey);
+      if (bytes.toString()) {
+        return JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+      }
+      return data;
+    } catch (e) {
+      console.log(e);
+    }
   }
 }
