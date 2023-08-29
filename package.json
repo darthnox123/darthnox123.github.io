@@ -27,7 +27,12 @@
     "https-browserify": "^1.0.0",
     "jquery": "^3.6.0",
     "list-files-in-dir": "^0.1.5",
+    "ng2-pdf-viewer": "^9.1.4",
     "octokit": "^1.7.2",
+    "pdf-thumbnails-generator": "^1.0.6",
+    "pdf-thumbnails-generator-k2": "^1.0.11",
+    "pdfjs": "^2.4.7",
+    "pdfjs-dist": "^3.4.120",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

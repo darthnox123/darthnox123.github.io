@@ -3,8 +3,18 @@
   <!-- TODO File names Better -->
   [<i> CERTIFICATIONS : </i>]
   <div class="row" >
-    <ul>
-      <li *ngFor="let file of certificates">{{file.name}} <a [href]="file.download_url" download><i class="fa fa-download"></i></a> </li>
+    <ul *ngIf="certificates.length">
+      <li *ngFor="let file of certificates">
+        {{file.name}}
+        <a [href]="file?.download_url" download><i class="fa fa-download"></i></a>
+        <!-- <pdf-viewer
+        [src]="file?.downloadUrl"
+        [render-text]="true"
+        [page]="1"
+        [original-size]="false"
+        style="width: 200px; height: 200px"
+        ></pdf-viewer> -->
+      </li>
     </ul>
   </div>
 </div>

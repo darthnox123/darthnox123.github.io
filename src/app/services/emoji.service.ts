@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 export class EmojiService {
   constructor(protected httpClient: HttpClient) {  }
 
-  public url : string  = 'https://api.emojisworld.fr/v1/random';
+  public url : string  = 'https://api.emojisworld.fr/v1/random?&sub_categories=71';
 
   async getEmojis() :Promise<any> {
     const data = await this.httpClient

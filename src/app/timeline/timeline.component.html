@@ -1,14 +1,14 @@
-<div class="row mt-4">
-  <div class="col">
-    [<i> TIMELINE : </i>]
-      <div class="timeline-steps aos-init aos-animate" data-aos="fade-up" *ngFor="let step of publicTimeline">
-          <div class="timeline-step">
-              <div class="timeline-content" data-toggle="popover">
-                  <div class="inner-circle"></div>
-                  <p class="h6 mt-3 mb-1">{{step.year}}</p>
-                  <p class="h6 text-muted mb-0 mb-lg-0">{{step.title}}</p>
-              </div>
-          </div>
-      </div>
-  </div>
+[<i> TIMELINE : </i>]
+<div class="timelines">
+  <section class="timeline">
+    <ol>
+      <li *ngFor="let time of publicTimeline">
+        <div>
+          <time>{{time.year}}</time> {{time.title}}
+
+          <p>{{time.description}}</p>
+        </div>
+      </li>
+    </ol>
+  </section>
 </div>

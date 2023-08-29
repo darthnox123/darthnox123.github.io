@@ -7,7 +7,6 @@ import { CertificationsService } from '@app/services';
   styleUrls: ['./certifications.component.css']
 })
 export class CertificationsComponent implements OnInit {
-
   public certificates: any[];
 
   constructor(private certificationsService: CertificationsService) { }

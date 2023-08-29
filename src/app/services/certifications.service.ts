@@ -8,25 +8,24 @@ import * as CryptoJS from 'crypto-js';
 export class CertificationsService {
   constructor(protected httpClient: HttpClient) {  }
 
-  public encryptSecretKey = ""
+  public encryptSecretKey = "ola"
   async getFiles(): Promise<any> {
-    const octokit = new Octokit({
-      auth: this.decryptData(environment.github_token)
 
-    })
+    const auth = this.decryptData(environment.github_token)
+
+    const octokit = new Octokit({auth})
 
     const data = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
       owner: 'darthnox123',
-      repo: 'darthnox123.github.ios',
+      repo: 'darthnox123.github.io',
       path: 'pdf_files',
-      ref:'master'
-    })
+      ref: 'master'
+    }) as any
 
     return data.data;
   }
 
   encryptData(data :any) {
-
     try {
       return CryptoJS.AES.encrypt(JSON.stringify(data), this.encryptSecretKey).toString();
     } catch (e) {
@@ -36,11 +35,11 @@ export class CertificationsService {
   }
 
   decryptData(data: any) {
-
     try {
       const bytes = CryptoJS.AES.decrypt(data, this.encryptSecretKey);
+
       if (bytes.toString()) {
-        return JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+        return bytes.toString(CryptoJS.enc.Utf8);
       }
       return data;
     } catch (e) {

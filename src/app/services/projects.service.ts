@@ -7,12 +7,13 @@ import * as CryptoJS from 'crypto-js';
 @Injectable()
 export class ProjectsService {
   constructor(protected httpClient: HttpClient) {  }
-  public encryptSecretKey = ""
+  public encryptSecretKey = "ola"
 
   async getProjects() :Promise<any> {
-    const octokit = new Octokit({
-      auth: this.decryptData(environment.github_token)
-    })
+
+    const auth = this.decryptData(environment.github_token)
+
+    const octokit = new Octokit({auth})
 
     const data = await octokit.request('GET /users/{username}/repos', {
       username: 'darthnox123'
@@ -26,7 +27,7 @@ export class ProjectsService {
     try {
       const bytes = CryptoJS.AES.decrypt(data, this.encryptSecretKey);
       if (bytes.toString()) {
-        return JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+        return bytes.toString(CryptoJS.enc.Utf8);
       }
       return data;
     } catch (e) {
