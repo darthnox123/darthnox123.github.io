@@ -1,10 +1,74 @@
-<div class="text-center">
-  <div class="relative h-[98.5vh] overflow-hidden pointer-events-none">
-    <app-rain></app-rain>
-    <h1 class="text-[7em] mb-8 mt-20 md:text-[6em] max-[480px]:text-[3em]">
-      Hi, my name is Francisco <span class="wave">👋</span>
+<div class="relative min-h-screen flex items-center overflow-hidden pt-16">
+  <!-- Grid background — requer background-image complexo, fica em CSS -->
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+
+  <div class="relative z-10 max-w-[1100px] mx-auto px-6 w-full">
+
+    <!-- Badge -->
+    <div class="inline-flex items-center gap-2 text-[0.8125rem] font-medium text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-4 py-1.5 rounded-full mb-7 font-mono tracking-[0.02em]">
+      <span class="badge-dot"></span>
+      Available for new opportunities
+    </div>
+
+    <!-- Name -->
+    <h1 class="text-[clamp(3.25rem,9vw,7rem)] font-black leading-none tracking-[-0.04em] text-slate-100 mb-5">
+      Francisco<br>
+      <span class="bg-clip-text text-transparent bg-gradient-to-br from-emerald-500 via-emerald-400 to-emerald-300">Trindade</span>
     </h1>
-    <h1 class="text-[7em]">💻</h1>
-    <h3 class="mb-8 text-2xl">Developer</h3>
+
+    <!-- Title row -->
+    <div class="flex items-center flex-wrap gap-2.5 mb-5">
+      <span class="font-mono text-slate-100 font-medium text-base">Software Engineer</span>
+      <span class="text-slate-600 text-xs">·</span>
+      <span class="text-slate-400 text-[0.9375rem]">7 years exp.</span>
+      <span class="text-slate-600 text-xs">·</span>
+      <span class="text-slate-400 text-[0.9375rem]">
+        <i class="fa fa-map-marker"></i>&nbsp;Lisbon, Portugal
+      </span>
+    </div>
+
+    <!-- Bio -->
+    <p class="max-w-[540px] text-[1.0625rem] text-slate-400 leading-[1.75] mb-9">
+      Specializing in web ecosystems — Angular, Vue, Laravel, NestJS —
+      with experience integrating AI solutions and building scalable,
+      high-performance full-stack applications.
+    </p>
+
+    <!-- CTAs -->
+    <div class="flex flex-wrap gap-3 mb-10">
+      <a href="#experience"
+         class="inline-flex items-center gap-2 bg-emerald-500 text-white font-semibold text-[0.9375rem] px-7 py-3.5 rounded-lg no-underline transition-all hover:bg-emerald-400 hover:-translate-y-px tracking-[0.01em]">
+        View Experience &nbsp;<i class="fa fa-arrow-right"></i>
+      </a>
+      <a href="#projects"
+         class="inline-flex items-center bg-transparent text-slate-100 font-semibold text-[0.9375rem] px-7 py-3.5 border border-white/[0.07] rounded-lg no-underline transition-all hover:border-emerald-500/30 hover:text-emerald-500 hover:-translate-y-px">
+        See Projects
+      </a>
+    </div>
+
+    <!-- Socials -->
+    <div class="flex items-center flex-wrap gap-3">
+      <a href="https://github.com/darthnox123" target="_blank" rel="noopener"
+         class="inline-flex items-center gap-1.5 text-sm text-slate-500 no-underline transition-colors hover:text-emerald-500">
+        <i class="fa fa-github"></i> GitHub
+      </a>
+      <span class="text-slate-700 text-xs">·</span>
+      <a href="mailto:francisco__trindade@hotmail.com"
+         class="inline-flex items-center gap-1.5 text-sm text-slate-500 no-underline transition-colors hover:text-emerald-500">
+        <i class="fa fa-envelope-o"></i> Email
+      </a>
+      <span class="text-slate-700 text-xs">·</span>
+      <a href="https://www.linkedin.com/in/francisco-trindade" target="_blank" rel="noopener"
+         class="inline-flex items-center gap-1.5 text-sm text-slate-500 no-underline transition-colors hover:text-emerald-500">
+        <i class="fa fa-linkedin"></i> LinkedIn
+      </a>
+    </div>
+  </div>
+
+  <!-- Scroll hint -->
+  <div class="scroll-hint">
+    <span>scroll</span>
+    <div class="w-px h-9 bg-gradient-to-b from-emerald-500/30 to-transparent"></div>
   </div>
 </div>

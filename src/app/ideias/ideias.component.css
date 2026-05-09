@@ -1,0 +1,9 @@
+/* Shimmer para loading skeleton */
+.loading-shimmer {
+  animation: shimmer 1.6s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 0.7; }
+}

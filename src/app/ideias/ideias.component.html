@@ -1,28 +1,38 @@
-<div class="p-6">
-  <p>[<i> IDEAS : </i>]</p>
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-4 mb-4">
-    @for (proj of projects; track proj.name) {
-      <div class="border-[1rem] border-[var(--pri-color)] flex flex-col">
-        <div class="relative h-[27rem] p-4 overflow-hidden">
-          <!-- Corner fold -->
-          <div class="absolute top-0 left-0 w-0 h-0"
-               style="border-top: 80px solid var(--pri-color); border-right: 80px solid transparent;"></div>
-          <h4 class="font-bold text-lg mt-4">{{ proj.name }}</h4>
-          <div class="flex flex-wrap gap-1 my-2">
-            @for (langs of proj.languages_array; track langs) {
-              <i class="devicon-{{formatIcon(langs)}} text-xl"></i>
-            }
+@if (projects.length === 0) {
+  <div class="grid gap-5" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr))">
+    @for (i of [1,2,3,4,5,6]; track i) {
+      <div class="h-[196px] bg-white/[0.03] border border-white/[0.07] rounded-xl loading-shimmer"></div>
+    }
+  </div>
+} @else {
+  <div class="grid gap-5" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr))">
+    @for (proj of projects; track proj.id) {
+      <div class="group bg-white/[0.03] border border-white/[0.07] rounded-xl p-6 flex flex-col transition-all duration-200 hover:border-emerald-500/30 hover:-translate-y-[3px] hover:bg-emerald-500/[0.03]">
+        <div class="flex-1">
+          <div class="flex justify-between items-start mb-4">
+            <i class="fa fa-folder-open-o text-[1.875rem] text-emerald-500 opacity-80"></i>
+            <a [href]="proj.svn_url" target="_blank" rel="noopener"
+               class="text-slate-500 no-underline p-1 rounded transition-colors hover:text-slate-100">
+              <i class="fa fa-external-link"></i>
+            </a>
           </div>
-          <hr class="border-dotted border-t-[3px] border-[var(--pri-color)] my-2" />
-          <p class="text-sm">{{ proj.description }}</p>
+          <h4 class="text-[0.9375rem] font-semibold text-slate-100 mb-2 tracking-tight">{{ proj.name }}</h4>
+          <p class="text-sm text-slate-400 leading-relaxed mb-4 line-clamp-3">
+            {{ proj.description || 'No description provided.' }}
+          </p>
+          @if (proj.languages_array) {
+            <div class="flex flex-wrap gap-2.5 mb-5">
+              @for (lang of proj.languages_array.slice(0, 4); track lang) {
+                <i class="devicon-{{ formatIcon(lang) }} text-[1.25rem] text-slate-500 transition-colors hover:text-slate-400" [title]="lang"></i>
+              }
+            </div>
+          }
         </div>
-        <div class="flex justify-end p-3 mt-auto">
-          <a [href]="proj.svn_url"
-             class="px-4 py-2 bg-[var(--pri-color)] text-[var(--sec-color)] hover:opacity-80 transition-opacity text-sm">
-            Get a Look
-          </a>
-        </div>
+        <a [href]="proj.svn_url" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-1.5 text-[0.8125rem] font-medium text-emerald-500 no-underline mt-2 font-mono transition-all hover:gap-2.5 hover:opacity-85">
+          View on GitHub <i class="fa fa-arrow-right"></i>
+        </a>
       </div>
     }
   </div>
-</div>
+}

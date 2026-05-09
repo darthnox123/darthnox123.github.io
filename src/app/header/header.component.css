@@ -1,18 +1,65 @@
-.wave {
-  animation-name: wave-animation;
-  animation-duration: 2.5s;
-  animation-iteration-count: infinite;
-  transform-origin: 70% 70%;
-  display: inline-block;
+/* Background grid — não existe equivalente em Tailwind para background-image com mask */
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(16, 185, 129, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 185, 129, 0.04) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 80% 90% at 50% 0%, black 30%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 90% at 50% 0%, black 30%, transparent 100%);
 }
 
-@keyframes wave-animation {
-  0%   { transform: rotate(0deg) }
-  10%  { transform: rotate(14deg) }
-  20%  { transform: rotate(-8deg) }
-  30%  { transform: rotate(14deg) }
-  40%  { transform: rotate(-4deg) }
-  50%  { transform: rotate(10deg) }
-  60%  { transform: rotate(0deg) }
-  100% { transform: rotate(0deg) }
+/* Radial glow */
+.hero-glow {
+  position: absolute;
+  top: -10%;
+  left: 30%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 500px;
+  background: radial-gradient(ellipse at center, rgba(16, 185, 129, 0.10) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+/* Pulsing badge dot */
+.badge-dot {
+  width: 7px;
+  height: 7px;
+  background: #10b981;
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: badge-pulse 2.2s ease-in-out infinite;
+}
+
+@keyframes badge-pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.5); }
+  50% { opacity: 0.7; box-shadow: 0 0 0 5px rgba(16, 185, 129, 0); }
+}
+
+/* Scroll hint com bounce — animação com translateX + translateY combinados */
+.scroll-hint {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #64748b;
+  font-size: 0.625rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-family: 'JetBrains Mono', monospace;
+  animation: scroll-bounce 2.4s ease-in-out infinite;
+}
+
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.4; }
+  50% { transform: translateX(-50%) translateY(6px); opacity: 0.9; }
+}
+
+@media (max-width: 640px) {
+  .scroll-hint { display: none; }
 }

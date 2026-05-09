@@ -1,0 +1,28 @@
+/* Hamburger line animation — combinação de transforms não suportada em Tailwind */
+.ham-line {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #94a3b8;
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.ham-line:nth-child(1).open { transform: translateY(7px) rotate(45deg); }
+.ham-line:nth-child(2).open { opacity: 0; }
+.ham-line:nth-child(3).open { transform: translateY(-7px) rotate(-45deg); }
+
+/* Pulsing availability dot */
+.avail-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background: #10b981;
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: pulse-avail 2.2s ease-in-out infinite;
+}
+
+@keyframes pulse-avail {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.75); }
+}

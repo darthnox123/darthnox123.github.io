@@ -1,40 +1,105 @@
-<div>
-  <!-- Header — full screen height -->
-  <div class="flex h-screen border-b-[1rem] border-[var(--pri-color)]">
-    <div class="w-full">
-      <app-header></app-header>
+<!-- NAVIGATION -->
+<nav class="fixed top-0 left-0 right-0 z-[1000] h-16 border-b transition-all duration-300"
+     [class.bg-zinc-950/90]="navScrolled"
+     [class.backdrop-blur-xl]="navScrolled"
+     [class.border-white/[0.07]]="navScrolled"
+     [class.border-transparent]="!navScrolled">
+  <div class="max-w-[1100px] mx-auto px-6 h-full flex items-center justify-between">
+
+    <a href="#hero" class="font-mono text-[1.1rem] font-semibold text-slate-100 no-underline tracking-tight">
+      <span class="text-emerald-500">&lt;</span>FT<span class="text-emerald-500">/&gt;</span>
+    </a>
+
+    <div [class]="menuOpen
+        ? 'flex flex-col absolute top-16 left-0 right-0 bg-zinc-950/95 backdrop-blur-xl border-b border-white/[0.07] py-2 z-50'
+        : 'hidden md:flex md:flex-row md:gap-8'">
+      <a href="#skills" (click)="menuOpen=false"
+         class="text-sm font-medium text-slate-400 no-underline transition-colors hover:text-slate-100 px-6 py-3.5 border-b border-white/[0.07] md:px-0 md:py-0 md:border-0">Stack</a>
+      <a href="#projects" (click)="menuOpen=false"
+         class="text-sm font-medium text-slate-400 no-underline transition-colors hover:text-slate-100 px-6 py-3.5 border-b border-white/[0.07] md:px-0 md:py-0 md:border-0">Projects</a>
+      <a href="#experience" (click)="menuOpen=false"
+         class="text-sm font-medium text-slate-400 no-underline transition-colors hover:text-slate-100 px-6 py-3.5 border-b border-white/[0.07] md:px-0 md:py-0 md:border-0">Experience</a>
+      <a href="#contact" (click)="menuOpen=false"
+         class="text-sm font-medium text-slate-400 no-underline transition-colors hover:text-slate-100 px-6 py-3.5 md:px-0 md:py-0">Contact</a>
+    </div>
+
+    <div class="flex items-center gap-4">
+      <a href="assets/cv/Francisco_Trindade_CV.pdf" download
+         class="flex items-center gap-1.5 text-[0.8125rem] font-medium text-emerald-500 border border-emerald-500/30 px-4 py-1.5 rounded-md no-underline transition-colors hover:bg-emerald-500/10 whitespace-nowrap">
+        <i class="fa fa-download"></i> CV
+      </a>
+      <button class="flex md:hidden flex-col gap-[5px] bg-transparent border-0 cursor-pointer p-1"
+              (click)="menuOpen = !menuOpen" [attr.aria-expanded]="menuOpen" aria-label="Toggle menu">
+        <span class="ham-line" [class.open]="menuOpen"></span>
+        <span class="ham-line" [class.open]="menuOpen"></span>
+        <span class="ham-line" [class.open]="menuOpen"></span>
+      </button>
     </div>
   </div>
+</nav>
 
-  <!-- Skills | Certifications -->
-  <div class="flex border-b-[1rem] border-[var(--pri-color)]">
-    <div class="w-1/2 border-r-[1rem] border-[var(--pri-color)]">
-      <app-skills></app-skills>
-    </div>
-    <div class="w-1/2">
-      <app-certifications></app-certifications>
-    </div>
+<!-- HERO -->
+<div id="hero">
+  <app-header></app-header>
+</div>
+
+<!-- STACK -->
+<section id="skills" class="py-[88px] bg-[#0d0d0d] border-y border-white/[0.07]">
+  <div class="max-w-[1100px] mx-auto px-6">
+    <span class="block font-mono text-[0.75rem] text-emerald-500 uppercase tracking-[0.12em] mb-2.5">// Stack</span>
+    <h2 class="text-[clamp(1.75rem,4vw,2.5rem)] font-bold text-slate-100 mb-12 leading-tight tracking-tight">Tech Stack</h2>
+    <app-skills></app-skills>
   </div>
+</section>
 
-  <!-- Ideas -->
-  <div class="border-b-[1rem] border-[var(--pri-color)]">
+<!-- PROJECTS -->
+<section id="projects" class="py-[88px]">
+  <div class="max-w-[1100px] mx-auto px-6">
+    <span class="block font-mono text-[0.75rem] text-emerald-500 uppercase tracking-[0.12em] mb-2.5">// Projects</span>
+    <h2 class="text-[clamp(1.75rem,4vw,2.5rem)] font-bold text-slate-100 mb-12 leading-tight tracking-tight">GitHub Projects</h2>
     <app-ideias></app-ideias>
   </div>
+</section>
 
-  <!-- Timeline -->
-  <div class="border-b-[1rem] border-[var(--pri-color)]">
+<!-- EXPERIENCE -->
+<section id="experience" class="py-[88px] bg-[#0d0d0d] border-y border-white/[0.07]">
+  <div class="max-w-[1100px] mx-auto px-6">
+    <span class="block font-mono text-[0.75rem] text-emerald-500 uppercase tracking-[0.12em] mb-2.5">// Experience</span>
+    <h2 class="text-[clamp(1.75rem,4vw,2.5rem)] font-bold text-slate-100 mb-12 leading-tight tracking-tight">Career Timeline</h2>
     <app-timeline></app-timeline>
   </div>
-</div>
+</section>
 
-<app-toggle-mode></app-toggle-mode>
-
-<div>
-  <a href="https://github.com/darthnox123"
-    target="_blank"
-    class="github-corner"
-    aria-label="View source on GitHub">
-    <svg width="90" height="90" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1); z-index: 99999" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg>
-    <style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
-  </a>
-</div>
+<!-- FOOTER / CONTACT -->
+<footer id="contact" class="bg-[#050505] border-t border-white/[0.07] pt-[72px] pb-11">
+  <div class="max-w-[1100px] mx-auto px-6 text-center">
+    <p class="inline-flex items-center gap-2 text-[0.8125rem] font-medium text-emerald-500 bg-emerald-500/10 border border-emerald-500/30 px-4 py-[5px] rounded-full mb-6">
+      <span class="avail-dot"></span>
+      Open to new opportunities
+    </p>
+    <p class="text-[clamp(1.25rem,3vw,1.875rem)] font-bold text-slate-100 tracking-tight mb-9">
+      Let's build something great together.
+    </p>
+    <div class="flex justify-center flex-wrap gap-7 mb-11">
+      <a href="mailto:francisco__trindade@hotmail.com"
+         class="flex items-center gap-2 text-sm text-slate-400 no-underline transition-colors hover:text-emerald-500">
+        <i class="fa fa-envelope-o"></i> francisco__trindade@hotmail.com
+      </a>
+      <a href="https://github.com/darthnox123" target="_blank" rel="noopener"
+         class="flex items-center gap-2 text-sm text-slate-400 no-underline transition-colors hover:text-emerald-500">
+        <i class="fa fa-github"></i> GitHub
+      </a>
+      <a href="https://www.linkedin.com/in/francisco-trindade" target="_blank" rel="noopener"
+         class="flex items-center gap-2 text-sm text-slate-400 no-underline transition-colors hover:text-emerald-500">
+        <i class="fa fa-linkedin-square"></i> LinkedIn
+      </a>
+      <a href="tel:+351929186968"
+         class="flex items-center gap-2 text-sm text-slate-400 no-underline transition-colors hover:text-emerald-500">
+        <i class="fa fa-phone"></i> +351 929 186 968
+      </a>
+    </div>
+    <p class="text-xs text-slate-600 font-mono">
+      Built with Angular &nbsp;·&nbsp; © 2025 Francisco Trindade &nbsp;·&nbsp; Lisbon, Portugal
+    </p>
+  </div>
+</footer>

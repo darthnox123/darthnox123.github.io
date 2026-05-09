@@ -9,32 +9,31 @@ import { ProjectsService } from '@app/services';
 })
 export class IdeiasComponent implements OnInit {
 
-  public projects: any[];
+  public projects: any[] = [];
 
   constructor(private projectService: ProjectsService) { }
 
   async ngOnInit(): Promise<void> {
-   const data = await this.projectService.getProjects();
+    const data = await this.projectService.getProjects();
 
-   if(!data) return;
+    if (!data) return;
 
-   this.projects = data;
+    this.projects = data.filter((p: any) => !p.fork && !p.archived);
 
-   const promises = []
-   for(let project of this.projects){
-    promises.push(this.projectService.getLanguages(project.languages_url));
-   }
+    const promises = this.projects.map((p: any) =>
+      this.projectService.getLanguages(p.languages_url)
+    );
 
-   const langData = await Promise.all(promises);
-   if(!langData) return;
+    const langData = await Promise.all(promises);
+    if (!langData) return;
 
-   for (let index = 0; index < langData.length; index++) {
-    this.projects[index].languages_array = Object.getOwnPropertyNames(langData[index])
-   }
+    for (let i = 0; i < langData.length; i++) {
+      this.projects[i].languages_array = Object.getOwnPropertyNames(langData[i]);
+    }
   }
 
-  formatIcon(langs: string){
-    if(langs == 'HTML') langs='html5'
-    return langs.toLowerCase()+'-plain'
+  formatIcon(lang: string): string {
+    if (lang === 'HTML') lang = 'html5';
+    return lang.toLowerCase() + '-plain';
   }
 }

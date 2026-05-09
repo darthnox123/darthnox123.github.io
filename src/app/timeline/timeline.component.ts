@@ -1,5 +1,14 @@
 import { Component } from '@angular/core';
 
+interface TimelineEntry {
+  type: 'work' | 'education';
+  company: string;
+  role: string;
+  period: string;
+  location: string;
+  highlights: string[];
+}
+
 @Component({
   selector: 'app-timeline',
   standalone: false,
@@ -7,36 +16,56 @@ import { Component } from '@angular/core';
   styleUrls: ['./timeline.component.css']
 })
 export class TimelineComponent {
-
-
-  publicTimeline = [
+  timeline: TimelineEntry[] = [
     {
-      year: '1997',
-      title: 'Born',
-      icon: 'fas fa-user',
-      description: 'Born 10th December 1997',
+      type: 'work',
+      company: 'Blauarbeit',
+      role: 'Frontend Developer',
+      period: 'Nov 2023 – Apr 2026',
+      location: 'Remote',
+      highlights: [
+        'Developed features for multiple Angular 17+ applications within a craftsmen job platform ecosystem.',
+        'Built and configured a mobile PWA for logged-in users, delivering a mobile-first experience.',
+        'Developed an intra-company admin platform using Angular and Tailwind CSS (Flowbite).',
+        'Implemented E2E testing with Playwright for critical business flows (login, registration, subscription).',
+        'Led migration to Laravel + Vue stack, resulting in a 40% improvement in Core Web Vitals metrics.',
+        'Engineered an AI-driven chatbot using the Laravel AI SDK, optimizing lead generation and user engagement.',
+      ]
     },
     {
-      year: '2018',
-      title: 'UAL',
-      icon: 'fas fa-university',
-      description: 'Finished College at Universidade Autónoma de Lisboa with 13',
+      type: 'work',
+      company: 'KnowledgeWorks',
+      role: 'Software Developer',
+      period: 'Dec 2020 – Nov 2023',
+      location: 'Remote',
+      highlights: [
+        'Full-stack developer for HR management app: Angular (frontend), Node.js / NestJS (backend), MySQL.',
+        'Mobile development using Ionic for cross-platform deployment on Android and iOS.',
+        'Contributed to major release cycles, implementing new features and resolving critical bugs.',
+      ]
     },
     {
-      year: '2019-2020',
-      title: 'Bee Engineering',
-      icon: 'fas fa-plus',
-      description: 'Finished College at Universidade Autónoma de Lisboa with 13',
+      type: 'work',
+      company: 'Bee Engineering',
+      role: 'Junior Consultant',
+      period: 'Feb 2019 – Apr 2020',
+      location: 'Lisbon',
+      highlights: [
+        'Training in Java Spring, Vue.js, Git, MySQL, and Scrum methodologies.',
+        'Client Assignment – Indra (May 2019): Frontend Developer for port management web application.',
+        'Developed features for the national-scale "JUL" maritime logistics system using Angular 8 and Redux.',
+      ]
     },
     {
-      year: '2020.',
-      title: 'KnowledgeWorks',
-      icon: 'fas fa-plus',
-      description: "Fullstack developer in a Human Resources management app (Frontend: Angular; Backend: Nodejs "+
-      "and some modules of the project have a NestJS Framework; Database: MySQL; Git: Bitbucket); As a developer " +
-      " I'm responsible for the development of features in major releases and also for bugfixing  I recently started " +
-      "to work also as a mobile developer (Ionic) and I am responsible for the development, build and deploy of releases for android and IOS.",
+      type: 'education',
+      company: 'UAL – Universidade Autónoma de Lisboa',
+      role: 'BSc Computer Science',
+      period: '2015 – 2018',
+      location: 'Lisbon',
+      highlights: [
+        'Coursework: Systems Programming, Data Structures & Algorithms, Artificial Intelligence, OOP.',
+        'Certifications: English C1 (EF SET, 2022), Scrum Fundamentals Certified (SCRUMstudy, 2019).',
+      ]
     },
   ];
-
 }

@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { initFlowbite } from 'flowbite';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,10 +6,12 @@ import { initFlowbite } from 'flowbite';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
-  title = 'portfolio';
+export class AppComponent {
+  menuOpen = false;
+  navScrolled = false;
 
-  ngOnInit(): void {
-    initFlowbite();
+  @HostListener('window:scroll')
+  onScroll() {
+    this.navScrolled = window.scrollY > 40;
   }
 }

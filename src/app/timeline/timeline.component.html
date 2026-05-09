@@ -1,15 +1,45 @@
-<p class="px-6 pt-6">[<i> TIMELINE : </i>]</p>
-<div class="timelines">
-  <section class="timeline">
-    <ol>
-      @for (time of publicTimeline; track time.year) {
-        <li>
-          <div>
-            <time>{{ time.year }}</time> {{ time.title }}
-            <p>{{ time.description }}</p>
-          </div>
-        </li>
-      }
-    </ol>
-  </section>
+<div class="relative">
+  @for (entry of timeline; track entry.company; let last = $last) {
+    <div class="flex gap-6">
+
+      <!-- Connector -->
+      <div class="flex flex-col items-center flex-shrink-0 w-5 pt-[3px]">
+        <div class="w-[13px] h-[13px] flex-shrink-0 rounded-full transition-shadow"
+             [class.bg-emerald-500]="entry.type === 'work'"
+             [class.border-2]="entry.type === 'work'"
+             [class.border-[#0d0d0d]]="entry.type === 'work'"
+             [class.shadow-[0_0_0_3px_rgba(16,185,129,0.12),0_0_10px_rgba(16,185,129,0.25)]]="entry.type === 'work'"
+             [class.bg-transparent]="entry.type === 'education'"
+             [class.border]="entry.type === 'education'"
+             [class.border-emerald-500/30]="entry.type === 'education'">
+        </div>
+        @if (!last) {
+          <div class="flex-1 w-px bg-gradient-to-b from-emerald-500/30 to-white/[0.07] my-1.5 min-h-7"></div>
+        }
+      </div>
+
+      <!-- Content -->
+      <div class="flex-1 pb-[52px]" [class.pb-0]="last">
+        <div class="flex items-center flex-wrap gap-3.5 mb-2.5">
+          <span class="font-mono text-[0.7rem] font-semibold text-emerald-500 bg-emerald-500/10 border border-emerald-500/30 px-2.5 py-[3px] rounded tracking-[0.04em]">
+            {{ entry.period }}
+          </span>
+          <span class="text-[0.8rem] text-slate-500 flex items-center gap-1">
+            <i class="fa fa-map-marker"></i> {{ entry.location }}
+          </span>
+        </div>
+        <div class="flex items-baseline flex-wrap gap-2 mb-4">
+          <h3 class="text-[1.125rem] font-bold text-slate-100 tracking-tight">{{ entry.role }}</h3>
+          <span class="text-slate-500 text-sm font-mono">&#64;</span>
+          <span class="text-base font-medium text-emerald-400">{{ entry.company }}</span>
+        </div>
+        <ul class="list-none p-0 m-0 flex flex-col gap-2">
+          @for (h of entry.highlights; track h) {
+            <li class="entry-bullet text-[0.9rem] text-slate-400 leading-[1.65]">{{ h }}</li>
+          }
+        </ul>
+      </div>
+
+    </div>
+  }
 </div>
