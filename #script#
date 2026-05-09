@@ -1,0 +1,5 @@
+ npx ng build --configuration development
+ npx ng build --configuration development
+ pwd && ls -la
+ npx ng version
+ echo "test"

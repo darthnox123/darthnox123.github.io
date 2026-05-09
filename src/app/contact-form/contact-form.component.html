@@ -1,25 +1,22 @@
-<div [formGroup]="contactForm" class="form-group">
-  [<i> TALK TO ME : </i>]
-  <!-- TODO TRanslations -->
-  <div class="body">
-    <div class="row mt-4 mb-4">
-      <div class="col-md-6">
-        <input type="text" class="form-control" formControlName="email" placeholder="Email">
-      </div>
-      <div class="col-md-6">
-        <input type="text" class="form-control" formControlName="subject" placeholder="Subject" >
-      </div>
+<div [formGroup]="contactForm" class="p-6">
+  <p>[<i> TALK TO ME : </i>]</p>
+  <div class="mt-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+      <input type="text"
+             class="w-full p-3 text-sm border border-[var(--pri-color)] bg-transparent text-[var(--pri-color)] placeholder-[var(--pri-color)] focus:outline-none focus:ring-1 focus:ring-[var(--pri-color)]"
+             formControlName="email" placeholder="Email">
+      <input type="text"
+             class="w-full p-3 text-sm border border-[var(--pri-color)] bg-transparent text-[var(--pri-color)] placeholder-[var(--pri-color)] focus:outline-none focus:ring-1 focus:ring-[var(--pri-color)]"
+             formControlName="subject" placeholder="Subject">
     </div>
-
-    <div class="row">
-      <div class="col-md-12">
-        <textarea class="form-control" formControlName="message" placeholder="Message"></textarea>
-      </div>
-    </div>
+    <textarea rows="6"
+              class="w-full p-3 text-sm border border-[var(--pri-color)] bg-transparent text-[var(--pri-color)] placeholder-[var(--pri-color)] focus:outline-none focus:ring-1 focus:ring-[var(--pri-color)]"
+              formControlName="message" placeholder="Message"></textarea>
   </div>
-
-  <div class="footer mt-3 mb-4">
-    <button type="button" class="btn btn-primary" (click)="onSubmit()" type="submit">Send <i class="fa fa-paper-plane-o"></i></button>
+  <div class="flex justify-end mt-4 mb-4">
+    <button type="button" (click)="onSubmit()"
+            class="px-6 py-3 bg-[var(--pri-color)] text-[var(--sec-color)] hover:opacity-80 transition-opacity">
+      Send <i class="fa fa-paper-plane-o ml-2"></i>
+    </button>
   </div>
-
 </div>

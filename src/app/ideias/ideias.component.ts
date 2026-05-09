@@ -3,6 +3,7 @@ import { ProjectsService } from '@app/services';
 
 @Component({
   selector: 'app-ideias',
+  standalone: false,
   templateUrl: './ideias.component.html',
   styleUrls: ['./ideias.component.css']
 })

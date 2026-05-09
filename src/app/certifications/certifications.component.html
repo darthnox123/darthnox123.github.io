@@ -1,20 +1,15 @@
-<div class="skills">
-  <!-- TODO translations -->
-  <!-- TODO File names Better -->
-  [<i> CERTIFICATIONS : </i>]
-  <div class="row" >
-    <ul *ngIf="certificates.length">
-      <li *ngFor="let file of certificates">
-        {{file.name}}
-        <a [href]="file?.download_url" download><i class="fa fa-download"></i></a>
-        <!-- <pdf-viewer
-        [src]="file?.downloadUrl"
-        [render-text]="true"
-        [page]="1"
-        [original-size]="false"
-        style="width: 200px; height: 200px"
-        ></pdf-viewer> -->
-      </li>
+<div class="p-6">
+  <p>[<i> CERTIFICATIONS : </i>]</p>
+  @if (certificates.length) {
+    <ul class="mt-4 space-y-2">
+      @for (file of certificates; track file.name) {
+        <li class="flex items-center justify-between py-2 border-b border-[var(--pri-color)]">
+          <span>{{ file.name }}</span>
+          <a [href]="file?.download_url" download class="hover:text-[var(--third-color)] transition-colors">
+            <i class="fa fa-download"></i>
+          </a>
+        </li>
+      }
     </ul>
-  </div>
+  }
 </div>

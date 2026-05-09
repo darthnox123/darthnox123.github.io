@@ -1,14 +1,15 @@
-[<i> TIMELINE : </i>]
+<p class="px-6 pt-6">[<i> TIMELINE : </i>]</p>
 <div class="timelines">
   <section class="timeline">
     <ol>
-      <li *ngFor="let time of publicTimeline">
-        <div>
-          <time>{{time.year}}</time> {{time.title}}
-
-          <p>{{time.description}}</p>
-        </div>
-      </li>
+      @for (time of publicTimeline; track time.year) {
+        <li>
+          <div>
+            <time>{{ time.year }}</time> {{ time.title }}
+            <p>{{ time.description }}</p>
+          </div>
+        </li>
+      }
     </ol>
   </section>
 </div>

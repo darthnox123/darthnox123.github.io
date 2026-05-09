@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-toggle-mode',
+  standalone: false,
   templateUrl: './toggle-mode.component.html',
   styleUrls: ['./toggle-mode.component.css']
 })

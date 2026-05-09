@@ -3,6 +3,7 @@ import { EmojiService } from '@app/services';
 
 @Component({
   selector: 'app-rain',
+  standalone: false,
   templateUrl: './rain.component.html',
   styleUrls: ['./rain.component.css'],
 })

@@ -3,6 +3,7 @@ import { CertificationsService } from '@app/services';
 
 @Component({
   selector: 'app-certifications',
+  standalone: false,
   templateUrl: './certifications.component.html',
   styleUrls: ['./certifications.component.css']
 })

@@ -1,9 +1,11 @@
-<div class="container">
-		<div class="snow" >
-      <span *ngFor="let item of rain" [style]="'--i:'+getRainSpeed()">
-         <p *ngFor="let item of rain">{{getThatRandomEmoji()}}</p>
+<div class="rain-wrapper">
+  <div class="snow">
+    @for (item of rain; track $index) {
+      <span [style]="'--i:' + getRainSpeed()">
+        @for (item of rain; track $index) {
+          <p>{{ getThatRandomEmoji() }}</p>
+        }
       </span>
-		</div>
+    }
+  </div>
 </div>
-
-

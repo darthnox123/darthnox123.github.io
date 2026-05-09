@@ -1,9 +1,10 @@
-<div class="skills">
-  <!-- TODO translations -->
-  <p>   [<i> STACK : </i>]  </p>
-  <div class="row" >
-    <div class="col-2" *ngFor="let name of skillsName">
-     <span class="icons"><i class="devicon-{{name}}"></i></span>
-    </div>
+<div class="p-6">
+  <p>[<i> STACK : </i>]</p>
+  <div class="grid grid-cols-6 gap-4 mt-4">
+    @for (name of skillsName; track name) {
+      <div class="flex justify-center">
+        <i class="devicon-{{name}} text-[4rem] md:text-[3rem] max-[767px]:text-[2rem] max-[480px]:text-[1rem]"></i>
+      </div>
+    }
   </div>
 </div>

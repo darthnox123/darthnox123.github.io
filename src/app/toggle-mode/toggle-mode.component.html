@@ -1,7 +1,6 @@
-<div class="toggle">
-  <div class="custom-control custom-switch custom-switch-xl" >
-    <input type="checkbox" class="custom-control-input" id="customSwitch8" (ngModelChange)="toggleMode()" [ngModel]="isNightVision" >
-    <label class="custom-control-label" for="customSwitch8"></label>
-  </div>
+<div class="absolute top-6 right-6">
+  <label class="toggle-label cursor-pointer">
+    <input type="checkbox" class="toggle-input sr-only" (ngModelChange)="toggleMode()" [ngModel]="isNightVision">
+    <div class="toggle-track"></div>
+  </label>
 </div>
-
