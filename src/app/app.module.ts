@@ -1,22 +1,17 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { provideHttpClient } from '@angular/common/http';
+import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SkillsComponent } from './skills/skills.component';
-import { RainComponent } from './rain/rain.component';
-import { ContactFormComponent } from './contact-form/contact-form.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CertificationsService, ContactService, EmojiService, ProjectsService } from '@services';
-import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
-import { ToggleModeComponent } from './toggle-mode/toggle-mode.component';
-import { CertificationsComponent } from './certifications/certifications.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { IdeiasComponent } from './ideias/ideias.component';
+import { ProjectsService } from '@services';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, SkillsComponent, RainComponent, ContactFormComponent, ToggleModeComponent, CertificationsComponent, TimelineComponent, IdeiasComponent],
-  imports: [BrowserModule, ReactiveFormsModule, HttpClientModule, FormsModule ],
-  providers: [ContactService, ProjectsService, EmojiService, CertificationsService],
+  declarations: [AppComponent, HeaderComponent, SkillsComponent, TimelineComponent, IdeiasComponent],
+  imports: [BrowserModule],
+  providers: [ProjectsService, provideHttpClient()],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

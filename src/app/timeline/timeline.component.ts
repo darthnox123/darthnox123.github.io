@@ -28,7 +28,6 @@ export class TimelineComponent {
         'Built and configured a mobile PWA for logged-in users, delivering a mobile-first experience.',
         'Developed an intra-company admin platform using Angular and Tailwind CSS (Flowbite).',
         'Implemented E2E testing with Playwright for critical business flows (login, registration, subscription).',
-        'Led migration to Laravel + Vue stack, resulting in a 40% improvement in Core Web Vitals metrics.',
         'Engineered an AI-driven chatbot using the Laravel AI SDK, optimizing lead generation and user engagement.',
       ]
     },
@@ -64,7 +63,6 @@ export class TimelineComponent {
       location: 'Lisbon',
       highlights: [
         'Coursework: Systems Programming, Data Structures & Algorithms, Artificial Intelligence, OOP.',
-        'Certifications: English C1 (EF SET, 2022), Scrum Fundamentals Certified (SCRUMstudy, 2019).',
       ]
     },
   ];

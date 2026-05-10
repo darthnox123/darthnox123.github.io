@@ -10,16 +10,18 @@
   -webkit-mask-image: radial-gradient(ellipse 80% 90% at 50% 0%, black 30%, transparent 100%);
 }
 
-/* Radial glow */
+/* Radial glow — follows cursor via CSS variables set by component */
 .hero-glow {
   position: absolute;
-  top: -10%;
-  left: 30%;
-  transform: translateX(-50%);
-  width: 700px;
-  height: 500px;
-  background: radial-gradient(ellipse at center, rgba(16, 185, 129, 0.10) 0%, transparent 65%);
+  left: var(--glow-x, 40%);
+  top: var(--glow-y, 35%);
+  transform: translate(-50%, -50%);
+  width: 900px;
+  height: 650px;
+  background: radial-gradient(ellipse at center, rgba(16, 185, 129, 0.13) 0%, transparent 65%);
   pointer-events: none;
+  transition: left 0.25s ease, top 0.25s ease;
+  will-change: left, top;
 }
 
 /* Pulsing badge dot */

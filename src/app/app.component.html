@@ -13,13 +13,13 @@
     <div [class]="menuOpen
         ? 'flex flex-col absolute top-16 left-0 right-0 bg-zinc-950/95 backdrop-blur-xl border-b border-white/[0.07] py-2 z-50'
         : 'hidden md:flex md:flex-row md:gap-8'">
-      <a href="#skills" (click)="menuOpen=false"
+      <a href="#skills" (click)="closeMenu()"
          class="text-sm font-medium text-slate-400 no-underline transition-colors hover:text-slate-100 px-6 py-3.5 border-b border-white/[0.07] md:px-0 md:py-0 md:border-0">Stack</a>
-      <a href="#projects" (click)="menuOpen=false"
+      <a href="#projects" (click)="closeMenu()"
          class="text-sm font-medium text-slate-400 no-underline transition-colors hover:text-slate-100 px-6 py-3.5 border-b border-white/[0.07] md:px-0 md:py-0 md:border-0">Projects</a>
-      <a href="#experience" (click)="menuOpen=false"
+      <a href="#experience" (click)="closeMenu()"
          class="text-sm font-medium text-slate-400 no-underline transition-colors hover:text-slate-100 px-6 py-3.5 border-b border-white/[0.07] md:px-0 md:py-0 md:border-0">Experience</a>
-      <a href="#contact" (click)="menuOpen=false"
+      <a href="#contact" (click)="closeMenu()"
          class="text-sm font-medium text-slate-400 no-underline transition-colors hover:text-slate-100 px-6 py-3.5 md:px-0 md:py-0">Contact</a>
     </div>
 
@@ -86,8 +86,5 @@
         <i class="fa fa-linkedin-square"></i> LinkedIn
       </a>
     </div>
-    <p class="text-xs text-slate-600 font-mono">
-      Built with Angular &nbsp;·&nbsp; © 2025 Francisco Trindade &nbsp;·&nbsp; Lisbon, Portugal
-    </p>
   </div>
 </footer>

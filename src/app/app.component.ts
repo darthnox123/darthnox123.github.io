@@ -14,4 +14,8 @@ export class AppComponent {
   onScroll() {
     this.navScrolled = window.scrollY > 40;
   }
+
+  closeMenu() {
+    this.menuOpen = false;
+  }
 }
