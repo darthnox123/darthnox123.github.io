@@ -17,6 +17,8 @@
          class="text-sm font-medium text-slate-400 no-underline transition-colors hover:text-slate-100 px-6 py-3.5 border-b border-white/[0.07] md:px-0 md:py-0 md:border-0">Stack</a>
       <a href="#projects" (click)="closeMenu()"
          class="text-sm font-medium text-slate-400 no-underline transition-colors hover:text-slate-100 px-6 py-3.5 border-b border-white/[0.07] md:px-0 md:py-0 md:border-0">Projects</a>
+      <a href="#featured" (click)="closeMenu()"
+         class="text-sm font-medium text-slate-400 no-underline transition-colors hover:text-slate-100 px-6 py-3.5 border-b border-white/[0.07] md:px-0 md:py-0 md:border-0">Work</a>
       <a href="#experience" (click)="closeMenu()"
          class="text-sm font-medium text-slate-400 no-underline transition-colors hover:text-slate-100 px-6 py-3.5 border-b border-white/[0.07] md:px-0 md:py-0 md:border-0">Experience</a>
       <a href="#contact" (click)="closeMenu()"
@@ -57,8 +59,18 @@
   </div>
 </section>
 
+<!-- FEATURED WORK -->
+<section id="featured" class="py-14 md:py-[88px] bg-[#0d0d0d] border-y border-white/[0.07]">
+  <div class="max-w-[1100px] mx-auto px-6">
+    <span class="block font-mono text-[0.75rem] text-emerald-500 uppercase tracking-[0.12em] mb-2.5">// Featured Work</span>
+    <h2 class="text-[clamp(1.75rem,4vw,2.5rem)] font-bold text-slate-100 mb-8 md:mb-12 leading-tight tracking-tight">Side Projects</h2>
+
+    <app-featured></app-featured>
+  </div>
+</section>
+
 <!-- EXPERIENCE -->
-<section id="experience" class="py-14 md:py-[88px] bg-[#0d0d0d] border-y border-white/[0.07]">
+<section id="experience" class="py-14 md:py-[88px]">
   <div class="max-w-[1100px] mx-auto px-6">
     <span class="block font-mono text-[0.75rem] text-emerald-500 uppercase tracking-[0.12em] mb-2.5">// Experience</span>
     <h2 class="text-[clamp(1.75rem,4vw,2.5rem)] font-bold text-slate-100 mb-8 md:mb-12 leading-tight tracking-tight">Career Timeline</h2>

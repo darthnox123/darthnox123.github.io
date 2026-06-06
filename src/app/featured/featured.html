@@ -1,0 +1,71 @@
+<div class="grid md:grid-cols-2 border border-white/[0.07] rounded-2xl overflow-hidden">
+  <!-- Info -->
+  <div class="p-8 md:p-10 flex flex-col justify-center bg-white/[0.01]">
+    <div class="flex items-center gap-2 mb-5">
+      <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+      <span class="font-mono text-[0.7rem] text-emerald-500 uppercase tracking-widest">Live</span>
+    </div>
+    <h3 class="text-[clamp(1.5rem,3vw,2rem)] font-bold text-slate-100 tracking-tight mb-3">FutScout</h3>
+    <p class="text-[0.9375rem] text-slate-400 leading-relaxed mb-7">
+      Football scouting platform with automated data collection via web scraping, player statistics, and
+      real-time match insights. Powered by a Python data pipeline, a NestJS REST API, and an Angular
+      frontend — fully containerised and deployed on a Hetzner VPS with GitHub Actions CI/CD.
+    </p>
+    <div class="flex flex-wrap gap-2 mb-8">
+      <span class="inline-flex items-center gap-1.5 text-xs text-slate-400 bg-white/[0.04] border border-white/[0.07] rounded-full px-3 py-1">
+        <i class="devicon-angularjs-plain text-sm"></i> Angular
+      </span>
+      <span class="inline-flex items-center gap-1.5 text-xs text-slate-400 bg-white/[0.04] border border-white/[0.07] rounded-full px-3 py-1">
+        <i class="devicon-nestjs-plain text-sm"></i> NestJS
+      </span>
+      <span class="inline-flex items-center gap-1.5 text-xs text-slate-400 bg-white/[0.04] border border-white/[0.07] rounded-full px-3 py-1">
+        <i class="devicon-python-plain text-sm"></i> Python
+      </span>
+      <span class="inline-flex items-center gap-1.5 text-xs text-slate-400 bg-white/[0.04] border border-white/[0.07] rounded-full px-3 py-1">
+        FastAPI
+      </span>
+      <span class="inline-flex items-center gap-1.5 text-xs text-slate-400 bg-white/[0.04] border border-white/[0.07] rounded-full px-3 py-1">
+        <i class="devicon-selenium-original text-sm"></i> Selenium
+      </span>
+      <span class="inline-flex items-center gap-1.5 text-xs text-slate-400 bg-white/[0.04] border border-white/[0.07] rounded-full px-3 py-1">
+        <i class="devicon-docker-plain text-sm"></i> Docker
+      </span>
+      <span class="inline-flex items-center gap-1.5 text-xs text-slate-400 bg-white/[0.04] border border-white/[0.07] rounded-full px-3 py-1">
+        <i class="devicon-github-original text-sm"></i> GitHub Actions
+      </span>
+      <span class="inline-flex items-center gap-1.5 text-xs text-slate-400 bg-white/[0.04] border border-white/[0.07] rounded-full px-3 py-1">
+        Tailwind CSS
+      </span>
+      <span class="inline-flex items-center gap-1.5 text-xs text-slate-400 bg-white/[0.04] border border-white/[0.07] rounded-full px-3 py-1">
+        Hetzner
+      </span>
+    </div>
+    <a href="https://futscout.win/" target="_blank" rel="noopener"
+       class="self-start inline-flex items-center gap-2 bg-emerald-500 text-white font-semibold text-[0.9375rem] px-6 py-3 rounded-lg no-underline transition-all hover:bg-emerald-400 hover:-translate-y-px">
+      Visit FutScout &nbsp;<i class="fa fa-external-link"></i>
+    </a>
+  </div>
+
+  <!-- Screenshot -->
+  <div class="border-t md:border-t-0 md:border-l border-white/[0.07] bg-[#080808] p-6 flex items-center justify-center">
+    <div class="w-full rounded-xl overflow-hidden border border-white/[0.07] shadow-2xl shadow-black/60">
+      <!-- Browser chrome -->
+      <div class="bg-zinc-900 px-4 py-2.5 flex items-center gap-2 border-b border-white/[0.07]">
+        <div class="flex gap-1.5">
+          <div class="w-2.5 h-2.5 rounded-full bg-red-500/50"></div>
+          <div class="w-2.5 h-2.5 rounded-full bg-yellow-500/50"></div>
+          <div class="w-2.5 h-2.5 rounded-full bg-green-500/50"></div>
+        </div>
+        <div class="flex-1 bg-zinc-800 rounded-md px-3 py-1 ml-2">
+          <span class="font-mono text-[0.65rem] text-slate-500">futscout.win</span>
+        </div>
+      </div>
+      <!-- Place screenshot at src/assets/images/futscout-preview.png -->
+      <div class="aspect-[16/10] overflow-hidden">
+        <img src="assets/images/futscout-preview.png"
+             alt="FutScout platform screenshot"
+             class="w-full h-full object-cover object-top" />
+      </div>
+    </div>
+  </div>
+</div>
